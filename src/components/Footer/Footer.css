@@ -23,6 +23,11 @@
   list-style: none;
 }
 
+.footer ul li:hover {
+  cursor: pointer;
+  color: red;
+}
+
 .copyright-text {
   color: gray;
   font-size: 14px;
