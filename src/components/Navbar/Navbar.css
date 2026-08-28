@@ -8,6 +8,7 @@
   color: #e5e5e5;
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 10%, transparent);
   z-index: 1;
+  transition: background 0.2s ease-in-out; 
 }
 
 .navbar-left {
@@ -74,4 +75,9 @@
 
 .navbar-profile:hover .dropdown {
   display: block;
+}
+
+.nav-dark {
+  background: #141414;
+  animation-duration: 300ms;
 }

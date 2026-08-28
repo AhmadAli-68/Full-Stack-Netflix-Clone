@@ -1,6 +1,6 @@
 import './TitleCards.css'
-import cards_data from '../../assets/cards/Cards_data'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const TitleCards = ({ title, category }) => {
 
@@ -25,7 +25,7 @@ const TitleCards = ({ title, category }) => {
   };
 
   useEffect(() => {
-    fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
+    fetch(`https://api.themoviedb.org/3/movie/${category ? category : 'now_playing'}?language=en-US&page=1`, options)
       .then(res => res.json())
       .then(res => setApiData(res.results))
       .catch(err => console.error(err));
@@ -37,10 +37,10 @@ const TitleCards = ({ title, category }) => {
 
       <div className='card-list'>
         {apiData.map((card, index) => (
-          <div className='card' key={index}>
+          <Link className='card' to={`/player/${card.id}`} key={index}>
             <img src={`https://image.tmdb.org/t/p/w500` + card.backdrop_path} alt={card.original_title} />
             <p>{card.original_title}</p>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
