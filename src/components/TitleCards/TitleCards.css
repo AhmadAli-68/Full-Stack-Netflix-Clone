@@ -29,6 +29,7 @@
 
 .card-list p {
   display: flex;
+  font-weight: bold;
   justify-content: center;
   align-items: center;
   /* text-decoration: none; */
